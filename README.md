@@ -135,6 +135,17 @@ hfgen_gen = llm(
 - **Prompting**. llmx makes some assumptions around how prompts are constructed e.g., how the chat message interface is assembled into a prompt for each model type. If your application or use case requires more control over the prompt, you may want to use a different library (ideally query the LLM models directly).
 - **Inference Optimization**. For hosted models (GPT-4, PalM, Cohere) etc, this library provides an excellent unified interface as the hosted api already takes care of inference optimizations. However, if you are looking for a library that is optimized for inference with **_local models_(e.g., huggingface)** (tensor parrelization, distributed inference etc), I'd recommend looking at [vllm](https://github.com/vllm-project/vllm) or [tgi](https://github.com/huggingface/text-generation-inference).
 
+
+## Installing this from github on notbooks
+
+```
+!pip uninstall llmx
+!pip install -e git+https://github.com/victordibia/llmx.git#egg=llmx
+
+# Check version 
+import llmx
+print(llmx.__version__)
+```
 ## Citation
 
 If you use this library in your work, please cite:

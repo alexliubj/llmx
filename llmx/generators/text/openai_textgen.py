@@ -18,6 +18,7 @@ class OpenAITextGenerator(TextGenerator):
         azure_endpoint: str = None,
         model: str = None,
         models: Dict = None,
+        base_url: str = None,
     ):
         super().__init__(provider=provider)
         self.api_key = api_key or os.environ.get("OPENAI_API_KEY", None)
@@ -32,6 +33,7 @@ class OpenAITextGenerator(TextGenerator):
             "organization": organization,
             "api_version": api_version,
             "azure_endpoint": azure_endpoint,
+            "base_url": base_url
         }
         # remove keys with None values
         self.client_args = {k: v for k,
